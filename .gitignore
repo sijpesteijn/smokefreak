@@ -1,7 +1,11 @@
 target/
 web/node_modules
+.mvn
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+
+
