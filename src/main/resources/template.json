@@ -1,0 +1,36 @@
+{
+  "template": "smokefreak-*",
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1,
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "customAnalyzer1": {
+            "filter": [
+              "lowercase",
+              "asciifolding"
+            ],
+            "tokenizer": "standard"
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "smoke_event": {
+      "properties": {
+        "id": {
+          "type": "keyword"
+        },
+        "username": {
+          "type": "keyword"
+        },
+        "timestamp": {
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+        }
+      }
+    }
+  }
+}

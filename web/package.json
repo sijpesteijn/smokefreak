@@ -1,0 +1,51 @@
+{
+  "name": "smokefreak-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bootstrap": "4.3.1",
+    "http-proxy-middleware": "^0.20.0",
+    "keycloak-js": "6.0.1",
+    "lodash.debounce": "^4.0.8",
+    "moment": "^2.24.0",
+    "react": "^16.9.0",
+    "react-cookie": "4.0.1",
+    "react-datetime-picker": "^2.7.1",
+    "react-dom": "^16.9.0",
+    "react-icons": "^3.7.0",
+    "react-keycloak": "^6.1.0",
+    "react-moment": "^0.9.2",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "5.0.1",
+    "react-scripts": "3.1.1",
+    "react-timelines": "^2.6.1",
+    "react-vertical-timeline-component": "^2.4.0",
+    "reactstrap": "8.0.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "timelinejs": "^2.35.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:8081",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
