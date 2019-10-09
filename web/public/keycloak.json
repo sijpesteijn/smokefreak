@@ -1,6 +1,6 @@
 {
   "realm": "SIJPESTEIJN",
-  "auth-server-url": "http://localhost:8080/auth",
+  "auth-server-url": "https://keycloak.sijpesteijn.nl/auth",
   "ssl-required": "external",
   "resource": "smokefreak",
   "public-client": true,
