@@ -29,7 +29,7 @@ const options = {
 
 export const addSmokeEvent = (payload) => {
     return (dispatch) => {
-        axios.post(`/api/smoke-events`, JSON.stringify(payload), options)
+        axios.post(`/smoke-events`, JSON.stringify(payload), options)
             .then(response => response.data)
             .then((data) => {
                 return dispatch(fetchSmokeEvents());
@@ -39,7 +39,7 @@ export const addSmokeEvent = (payload) => {
 
 export const fetchSmokeEvents = () => {
     return (dispatch) => {
-        axios.get(`/api/smoke-events`)
+        axios.get(`/smoke-events`)
             .then(res => {
                 dispatch(SmokeEventsLoaded(res.data));
             })

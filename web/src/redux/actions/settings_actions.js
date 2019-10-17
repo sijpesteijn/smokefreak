@@ -40,7 +40,7 @@ const options = {
 
 export const SaveSettings = (payload) => {
     return (dispatch) => {
-        axios.post(`/api/settings`, JSON.stringify(payload), options)
+        axios.post(`/settings`, JSON.stringify(payload), options)
             .then(dispatch(SettingsSaved(payload)))
             .catch(error => {
                 dispatch(SettingsSaveFailure(error));
@@ -50,7 +50,7 @@ export const SaveSettings = (payload) => {
 
 export const fetchSettings = () => {
     return (dispatch) => {
-        axios.get(`/api/settings`)
+        axios.get(`/settings`)
             .then(res => {
                 dispatch(SettingsLoaded(res.data));
             })
