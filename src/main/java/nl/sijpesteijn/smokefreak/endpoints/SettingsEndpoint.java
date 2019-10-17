@@ -13,7 +13,7 @@ import javax.validation.Valid;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/settings")
+@RequestMapping("/api/settings")
 public class SettingsEndpoint {
     private final Mono<SecurityContext> context = ReactiveSecurityContextHolder.getContext();
 

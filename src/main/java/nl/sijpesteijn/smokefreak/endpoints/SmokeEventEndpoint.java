@@ -15,7 +15,7 @@ import javax.validation.Valid;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/smoke-events")
+@RequestMapping("/api/smoke-events")
 public class SmokeEventEndpoint {
     private final Mono<SecurityContext> context = ReactiveSecurityContextHolder.getContext();
 
