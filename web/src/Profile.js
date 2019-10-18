@@ -65,19 +65,19 @@ const Profile = ({settings}) => {
                     <Col md={6}>
                         <FormGroup>
                             <Label for="profileBrand">Brand</Label>
-                            <Input type="text" name="brand" id="profileBrand" defaultValue={settings.tabacBrand.name}/>
+                            <Input type="text" name="brand" id="profileBrand" defaultValue={settings.tabacBrand ? settings.tabacBrand.name : ''}/>
                         </FormGroup>
                     </Col>
                     <Col md={4}>
                         <FormGroup>
                             <Label for="profilePrice">Price</Label>
-                            <Input type="number" step="0.1" name="price" id="profilePrice" defaultValue={settings.tabacBrand.price}/>
+                            <Input type="number" step="0.1" name="price" id="profilePrice" defaultValue={settings.tabacBrand ? settings.tabacBrand.price : ''}/>
                         </FormGroup>
                     </Col>
                     <Col md={2}>
                         <FormGroup>
                             <Label for="profileContents">Number in pack</Label>
-                            <Input type="number" name="contents" id="profileContents" defaultValue={settings.tabacBrand.contents}/>
+                            <Input type="number" name="contents" id="profileContents" defaultValue={settings.tabacBrand ? settings.tabacBrand.contents : ''}/>
                         </FormGroup>
                     </Col>
                 </Row>

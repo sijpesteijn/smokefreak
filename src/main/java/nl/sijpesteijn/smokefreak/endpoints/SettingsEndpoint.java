@@ -1,7 +1,6 @@
 package nl.sijpesteijn.smokefreak.endpoints;
 
 import nl.sijpesteijn.smokefreak.domain.Settings;
-import nl.sijpesteijn.smokefreak.domain.SmokeEvent;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.ReactiveSecurityContextHolder;
@@ -9,13 +8,12 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
-import reactor.core.publisher.MonoSink;
 
 import javax.validation.Valid;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/settings")
+@RequestMapping("/api/settings")
 public class SettingsEndpoint {
     private final Mono<SecurityContext> context = ReactiveSecurityContextHolder.getContext();
 

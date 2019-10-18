@@ -27,12 +27,12 @@
     "timelinejs": "^2.35.6"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "REACT_APP_KEYCLOAK=http://localhost:8080/auth/ react-scripts start",
+    "build": "REACT_APP_KEYCLOAK=https://keycloak.sijpesteijn.nl/auth/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://keycloak.sijpesteijn.nl",
+  "proxy": "http://localhost:8081",
   "eslintConfig": {
     "extends": "react-app"
   },
