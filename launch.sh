@@ -14,7 +14,7 @@ start)
        echo "$SERVICE_NAME backend is already running ..."
   fi
   if [ ! -f $PID_FRONTEND_PATH_NAME ]; then
-       nohup /usr/bin/yarn --cwd /opt/smokefreak/web start > output.log &
+       nohup serve -s /opt/smokefreak/web/build/ > output.log &
                   echo $! > $PID_FRONTEND_PATH_NAME
        echo "$SERVICE_NAME frontend started ..."
   else
@@ -68,7 +68,7 @@ restart)
        echo "$SERVICE_NAME backend is already running ..."
   fi
   if [ ! -f $PID_FRONTEND_PATH_NAME ]; then
-       nohup /usr/bin/yarn --cwd /opt/smokefreak/web start > output.log &
+       nohup serve -s /opt/smokefreak/web/build/ > output.log &
                   echo $! > $PID_FRONTEND_PATH_NAME
        echo "$SERVICE_NAME frontend started ..."
   else
