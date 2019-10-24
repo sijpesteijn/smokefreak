@@ -1,6 +1,8 @@
 package nl.sijpesteijn.smokefreak.endpoints;
 
 import nl.sijpesteijn.smokefreak.domain.Settings;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.ReactiveSecurityContextHolder;
@@ -15,6 +17,7 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/api/settings")
 public class SettingsEndpoint {
+  Logger logger = LoggerFactory.getLogger(SettingsEndpoint.class);
   private final Mono<SecurityContext> context = ReactiveSecurityContextHolder.getContext();
 
   private SettingsRepository settingsRepository;
@@ -28,6 +31,7 @@ public class SettingsEndpoint {
     return extractUserSeqIdFromJwtToken(context).flatMap(jwt ->
     {
       String username = (String) jwt.getClaims().get("preferred_username");
+      logger.debug("Getting settings for user {}", username);
       return settingsRepository
           .findById(username)
           .map(settings -> ResponseEntity.ok(settings))
@@ -40,6 +44,7 @@ public class SettingsEndpoint {
     return extractUserSeqIdFromJwtToken(context).flatMap(jwt ->
     {
       settings.setUsername((String) jwt.getClaims().get("preferred_username"));
+      logger.debug("Saving settings for user {}", settings.getUsername());
       return settingsRepository.save(settings).map(saved -> ResponseEntity.ok(saved));
     });
   }
