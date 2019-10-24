@@ -31,7 +31,7 @@ public class SettingsEndpoint {
     return extractUserSeqIdFromJwtToken(context).flatMap(jwt ->
     {
       String username = (String) jwt.getClaims().get("preferred_username");
-      logger.debug("Getting settings for user {}", username);
+      logger.debug("******************************************* Getting settings for user {}", username);
       return settingsRepository
           .findById(username)
           .map(settings -> ResponseEntity.ok(settings))
@@ -44,7 +44,7 @@ public class SettingsEndpoint {
     return extractUserSeqIdFromJwtToken(context).flatMap(jwt ->
     {
       settings.setUsername((String) jwt.getClaims().get("preferred_username"));
-      logger.debug("Saving settings for user {}", settings.getUsername());
+      logger.debug("******************************************* Saving settings for user {}", settings.getUsername());
       return settingsRepository.save(settings).map(saved -> ResponseEntity.ok(saved));
     });
   }
