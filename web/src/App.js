@@ -40,6 +40,10 @@ const App = ({authenticationState, isNew}) => {
                     request.headers['Authorization'] = 'Bearer ' + keycloak.token;
                     return request;
                 });
+                axios.interceptors.response.use(response => {
+                    console.log('Response: ', response);
+                    return response;
+                });
                 store.dispatch(fetchSmokeEvents());
                 store.dispatch(fetchSettings());
             }
