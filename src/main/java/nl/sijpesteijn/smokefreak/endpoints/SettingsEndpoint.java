@@ -15,7 +15,7 @@ import javax.validation.Valid;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/api/settings")
+@RequestMapping(value = "/api/settings", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class SettingsEndpoint {
   Logger logger = LoggerFactory.getLogger(SettingsEndpoint.class);
   private final Mono<SecurityContext> context = ReactiveSecurityContextHolder.getContext();
